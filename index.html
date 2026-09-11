@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no" />
+  <meta name="theme-color" content="#0b0d0e" />
+  <title>Sinjar: Guardian of the Mountain</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}</script>
+</head>
+<body>
+  <div id="game"></div>
+  <div id="vignette"></div><div id="damage-flash"></div>
+  <header class="topbar">
+    <div class="brand"><div class="sun-mark"></div><div><strong>SINJAR</strong><small>GUARDIAN OF THE MOUNTAIN</small></div></div>
+    <div class="mission-chip"><i></i> المهمة: حماية الممر الجبلي</div>
+  </header>
+  <section id="hud" class="hud hidden">
+    <div class="hud-left">
+      <div class="meter"><label>الصحة <b id="health">100</b></label><span><i id="health-bar"></i></span></div>
+      <div class="meter"><label>الدرع <b id="armor">60</b></label><span><i id="armor-bar"></i></span></div>
+    </div>
+    <div class="hud-center"><div id="crosshair" class="crosshair"><i></i><i></i><i></i><i></i></div><div id="hitmarker" class="hitmarker">×</div><p id="objective">طهّر المنطقة من العناصر المعادية</p></div>
+    <div class="hud-right"><div class="ammo"><b id="ammo">30</b><span>/</span><em id="reserve">120</em></div><small>M4 • 5.56</small><p>تم تحييد <b id="kills">0</b> / <span id="total-enemies">0</span></p></div>
+  </section>
+  <section id="intro" class="intro">
+    <div class="intro-card">
+      <div class="sun-large"></div><p class="eyebrow">WEB 3D • CINEMATIC PROTOTYPE</p>
+      <h1>سنجار <span>حارس الجبل</span></h1>
+      <p class="lead">لعبة أكشن ثلاثية الأبعاد في أجواء جبل سنجار. تحمي الممرات والمدنيين من عناصر تنظيم داعش الإرهابي في تجربة خيالية مستوحاة من المكان.</p>
+      <div class="warning">لا تمثل اللعبة محاكاة دقيقة لأحداث أو أشخاص حقيقيين، ولا تستخدم رموز التنظيم كمواد دعائية.</div>
+      <div class="controls"><div><kbd>WASD</kbd><span>حركة</span></div><div><kbd>Mouse</kbd><span>نظر</span></div><div><kbd>Click</kbd><span>إطلاق</span></div><div><kbd>R</kbd><span>تعبئة</span></div><div><kbd>Shift</kbd><span>ركض</span></div><div><kbd>Space</kbd><span>قفز</span></div></div>
+      <div class="quality-row"><label>الجودة</label><button class="quality active" data-quality="high">عالية</button><button class="quality" data-quality="medium">متوسطة</button><button class="quality" data-quality="low">خفيفة</button></div>
+      <button id="start" class="start-btn">ابدأ المهمة <b>▶</b></button>
+      <p class="mobile-note">الهاتف: عصا يسار للحركة، اسحب يمين الشاشة للنظر، والزر الأحمر للإطلاق.</p>
+    </div>
+  </section>
+  <section id="pause" class="overlay hidden"><div class="card"><p>متوقف مؤقتًا</p><h2>عد إلى سنجار</h2><button id="resume" class="start-btn">متابعة</button></div></section>
+  <section id="result" class="overlay hidden"><div class="card"><div class="sun-large"></div><p class="eyebrow">MISSION COMPLETE</p><h2 id="result-title">تم تأمين الممر</h2><p id="result-text">تم تحييد جميع العناصر المعادية.</p><button id="restart" class="start-btn">إعادة المهمة</button></div></section>
+  <div id="mobile-controls" class="mobile-controls hidden"><div id="joystick" class="joystick"><div id="stick"></div></div><div class="mobile-actions"><button id="reload-mobile" class="round">R</button><button id="jump-mobile" class="round">↑</button><button id="fire-mobile" class="fire"><i></i></button></div></div>
+  <script type="module" src="./src/game.js"></script>
+</body>
+</html>
